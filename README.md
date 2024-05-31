@@ -30,7 +30,7 @@ Welcome to the Math Game! This project is a C# WinForms application designed for
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/math-game.git
+   git clone git@github.com:GitNach/WinFormsMath1.git
 Open the solution file in Visual Studio.
 Build the solution to restore the required packages and dependencies.
 Run the project from Visual Studio.
