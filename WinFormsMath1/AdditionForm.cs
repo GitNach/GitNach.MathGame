@@ -14,16 +14,15 @@ namespace WinFormsMath1
         
     {
         private int _resultQuestions = 0;
-        private static int s_questions = 5;
-        private int _correctAnswer;
-        private (int a, int b)[] questions;
+        private static int s_numQuestions = 5;
+        private (int a, int b)[] questions;  //Create a method called getQuestions, so i don't have to write that long line all the time.
         private int currentQuestionIndex = 0;
 
         public AdditionForm()
         {
             InitializeComponent();
             labelResult.Visible = false;
-            backMenu.Visible = false;   
+             
             generateQuestions();
             ShowQuestion();
         }
@@ -32,8 +31,8 @@ namespace WinFormsMath1
         {
             Random random = new Random();
 
-            questions = new (int a, int b)[s_questions];
-            for (int i = 0; i < s_questions; i++)
+            questions = new (int a, int b)[s_numQuestions];
+            for (int i = 0; i < s_numQuestions; i++)
             {
                 int a = random.Next(1, 100); 
                 int b = random.Next(1, 100);
@@ -45,7 +44,7 @@ namespace WinFormsMath1
 
         private void ShowQuestion()
         {
-            if (currentQuestionIndex < s_questions)
+            if (currentQuestionIndex < s_numQuestions)
             {
                 var question = questions[currentQuestionIndex];
                 labelQstn.Text = $"{question.a} + {question.b} = ?";
@@ -53,16 +52,16 @@ namespace WinFormsMath1
             }
             else { 
                 ShowResults();
-                backMenu.Visible = true;    
+                
             }
         }
 
-
+       
 
 
         private void ShowResults()
         {
-            labelResult.Text = $"Results: {_resultQuestions}/{s_questions}" ;
+            labelResult.Text = $"Results: {_resultQuestions}/{s_numQuestions}" ;
             labelResult.Visible = true;
             
         }
@@ -76,15 +75,17 @@ namespace WinFormsMath1
                 if (userAnswer == question.a + question.b) { 
                     _resultQuestions++;
                 }
+                currentQuestionIndex++;
+                ShowQuestion();
 
             }
             else
             {
                 MessageBox.Show("Please enter a valid integer.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBoxAnswer.Clear();
+                
             }
-            currentQuestionIndex++;
-            ShowQuestion();
+            
         }
 
 

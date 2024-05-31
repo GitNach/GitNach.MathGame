@@ -14,7 +14,13 @@ namespace WinFormsMath1
 
         private void button4_Click(object sender, EventArgs e)
         {
+            SubtractForm subtractForm = new SubtractForm();
 
+            this.Hide();
+
+            subtractForm.ShowDialog();
+
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

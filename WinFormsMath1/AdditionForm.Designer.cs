@@ -53,9 +53,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(284, 33);
+            button1.Location = new Point(284, 30);
             button1.Name = "button1";
-            button1.Size = new Size(88, 20);
+            button1.Size = new Size(89, 23);
             button1.TabIndex = 2;
             button1.Text = "Send Answer";
             button1.UseVisualStyleBackColor = true;
