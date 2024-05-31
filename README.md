@@ -28,9 +28,9 @@ Welcome to the Math Game! This project is a C# WinForms application designed for
 
 ## Installation
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine (git CLI):
    ```bash
-   git clone git@github.com:GitNach/WinFormsMath1.git
+   gh repo clone GitNach/WinFormsMath1
 Open the solution file in Visual Studio.
 Build the solution to restore the required packages and dependencies.
 Run the project from Visual Studio.
