@@ -45,16 +45,4 @@ Results History: Implement a feature in the main menu to view a list of results 
 User Authentication: Add user login functionality to track individual progress.
 Difficulty Levels: Introduce different difficulty levels (easy, medium, hard) for each arithmetic operation.
 
-## Contributing
-Fork the repository.
-Create a new branch for your feature:
 
-git checkout -b feature-name
-Commit your changes:
-
-
-git commit -m 'Add some feature'
-Push to the branch:
-
-git push origin feature-name
-Open a pull request.
