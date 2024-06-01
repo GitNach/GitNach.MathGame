@@ -93,6 +93,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "AdditionForm";
             Text = "Addition";
+            Load += AdditionForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

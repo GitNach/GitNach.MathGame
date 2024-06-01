@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace WinFormsMath1
 {
-    public partial class AdditionForm : Form
-
+    public partial class MultiplicationForm : Form
     {
         private int _resultQuestions = 0;
         private static int s_numQuestions = 5;
         private (int a, int b)[] questions;  //Create a method called getQuestions, so i don't have to write that long line all the time.
         private int currentQuestionIndex = 0;
-
-        public AdditionForm()
+        public MultiplicationForm()
         {
             InitializeComponent();
-            labelResult.Visible = false;
-
+            labelScoreMultiplication.Visible = false;
             generateQuestions();
             ShowQuestion();
         }
+
+        
 
         private void generateQuestions()
         {
@@ -34,8 +33,8 @@ namespace WinFormsMath1
             questions = new (int a, int b)[s_numQuestions];
             for (int i = 0; i < s_numQuestions; i++)
             {
-                int a = random.Next(1, 100);
-                int b = random.Next(1, 100);
+                int a = random.Next(1, 15);
+                int b = random.Next(1, 10);
 
                 questions[i] = (a, b);
             }
@@ -47,8 +46,8 @@ namespace WinFormsMath1
             if (currentQuestionIndex < s_numQuestions)
             {
                 var question = questions[currentQuestionIndex];
-                labelQstn.Text = $"{question.a} + {question.b} = ?";
-                textBoxAnswer.Text = "";
+                labelQstnMultiplication.Text = $"{question.a} * {question.b} = ?";
+                textBoxMultiplication.Text = "";
             }
             else
             {
@@ -62,18 +61,23 @@ namespace WinFormsMath1
 
         private void ShowResults()
         {
-            labelResult.Text = $"Results: {_resultQuestions}/{s_numQuestions}";
-            labelResult.Visible = true;
+            labelScoreMultiplication.Text = $"Results: {_resultQuestions}/{s_numQuestions}";
+            labelScoreMultiplication.Visible = true;
 
         }
 
-        public void checkAnswer(object sender, EventArgs e)
+
+
+
+        
+
+        private void checkAnswer(object sender, EventArgs e)
         {
             int userAnswer;
             var question = questions[currentQuestionIndex];
-            if (int.TryParse(textBoxAnswer.Text, out userAnswer))
+            if (int.TryParse(textBoxMultiplication.Text, out userAnswer))
             {
-                if (userAnswer == question.a + question.b)
+                if (userAnswer == question.a * question.b)
                 {
                     _resultQuestions++;
                 }
@@ -84,21 +88,17 @@ namespace WinFormsMath1
             else
             {
                 MessageBox.Show("Please enter a valid integer.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textBoxAnswer.Clear();
+                textBoxMultiplication.Clear();
 
             }
 
         }
 
+        
 
         public void btnBackToMenu(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void AdditionForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
