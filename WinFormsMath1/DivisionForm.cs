@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsMath1.Controllers;
 
 namespace WinFormsMath1
 {
@@ -56,6 +57,13 @@ namespace WinFormsMath1
             }
             else
             {
+                GameHistoryController.History.Add(new()
+                {
+                    Date = DateTime.Now,
+                    Score = _resultQuestions,
+                    Type = Model.GameHistory.GameType.Division,
+
+                });
                 ShowResults();
 
             }
