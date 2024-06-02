@@ -57,13 +57,5 @@ namespace WinFormsMath1
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DivisionForm divitionForm = new DivisionForm();
-            this.Hide();    
-            divitionForm.ShowDialog();  
-            this.Show();
-        }
     }
 }
