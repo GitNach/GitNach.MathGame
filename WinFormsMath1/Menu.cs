@@ -32,7 +32,10 @@ namespace WinFormsMath1
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            GamesHistoryForm gamesHistoryForm = new GamesHistoryForm();
+            this.Hide();
+            gamesHistoryForm.ShowDialog();
+            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

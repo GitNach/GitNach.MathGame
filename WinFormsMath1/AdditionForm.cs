@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsMath1.Controllers;
 
 namespace WinFormsMath1
 {
     public partial class AdditionForm : Form
 
-    {
+    {   
+        
+
+        
         private int _resultQuestions = 0;
         private static int s_numQuestions = 5;
         private (int a, int b)[] questions;  //Create a method called getQuestions, so i don't have to write that long line all the time.
@@ -23,9 +27,16 @@ namespace WinFormsMath1
             InitializeComponent();
             labelResult.Visible = false;
 
+            
+
             generateQuestions();
             ShowQuestion();
         }
+
+
+        
+
+
 
         private void generateQuestions()
         {
@@ -52,6 +63,15 @@ namespace WinFormsMath1
             }
             else
             {
+
+                GameHistoryController.History.Add(new()
+                {
+
+                    Date = DateTime.Now,
+                    Score = _resultQuestions,
+                    Type = Model.GameHistory.GameType.Addition,
+
+                });
                 ShowResults();
 
             }
