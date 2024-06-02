@@ -28,11 +28,6 @@ namespace WinFormsMath1
         }
 
 
-        private void showHistory()
-        {
-            
-        }
-
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,16 +35,9 @@ namespace WinFormsMath1
             this.Hide();
         }
 
-        private void refreshButton_Click(object sender, EventArgs e)
-        {
-            dataGridHistory.DataSource = GameHistoryController.History;
+        
 
-        }
-
-        private void labelHistory_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 
 }
